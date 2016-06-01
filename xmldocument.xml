@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<bookdetail xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="schema.xml">
+<book>
+	<BookTitle>Inferno</BookTitle>
+	<ISBN>100-100-1000</ISBN>
+	<price currency="80.99" />
+	<publishdate>2012-09-05</publishdate>
+	<totaltimeincirculation>P3Y1M11D</totaltimeincirculation>
+	<author>
+		<authorname>
+			<lastName>Brown</lastName>
+			<middleInitial></middleInitial>
+			<firstName>Dan</firstName>
+		</authorname>
+		<dateOfBirth>1951-01-21</dateOfBirth>
+		<highesteducation>BA</highesteducation>
+	</author>
+	<publisher>
+		<publishername>Doubleday</publishername>
+		<publisheraddress>
+			<streetaddress>600 Baker Street</streetaddress>
+			<suiteno>234</suiteno>
+			<city>New York</city>
+			<zipcode>21034</zipcode>
+			<country>USA</country>
+		</publisheraddress>
+	</publisher>
+	</book>
+<book>
+	<BookTitle>The Shiva Trilogy</BookTitle>
+	<ISBN>100-100-1001</ISBN>
+	<price currency="20.99" />
+	<publishdate>2012-05-13</publishdate>
+	<totaltimeincirculation>P3Y5M01D</totaltimeincirculation>
+	<author>
+		<authorname>
+			<lastName>Tripathi</lastName>
+			<middleInitial>K.</middleInitial>
+			<firstName>Amish</firstName>
+		</authorname>
+		<dateOfBirth>1981-10-12</dateOfBirth>
+		<highesteducation>MBA</highesteducation>
+	</author>
+	<publisher>
+		<publishername>Rupa Co</publishername>
+		<publisheraddress>
+			<streetaddress>60 Durga rd</streetaddress>
+			<suiteno>1000</suiteno>
+			<city>Kolkata</city>
+			<zipcode>75444</zipcode>
+			<country>INDIA</country>
+		</publisheraddress>
+	</publisher>
+</book>
+<book>
+	<BookTitle>Clifton Chronicles</BookTitle>
+	<ISBN>100-100-1002</ISBN>
+	<price currency="16.99" />
+	<publishdate>2011-09-20</publishdate>
+	<totaltimeincirculation>P4Y1M16D</totaltimeincirculation>
+	<author>
+		<authorname>
+			<lastName>Archer</lastName>
+			<middleInitial>H.</middleInitial>
+			<firstName>Jeffrey</firstName>
+		</authorname>
+		<dateOfBirth>1940-05-20</dateOfBirth>
+		<highesteducation>MA</highesteducation>
+	</author>
+	<publisher>
+		<publishername>McGraw Hill</publishername>
+		<publisheraddress>
+			<streetaddress>611 Independence Pkwy</streetaddress>
+			<suiteno>201</suiteno>
+			<city>Plano</city>
+			<zipcode>75000</zipcode>
+			<country>USA</country>
+		</publisheraddress>
+	</publisher>
+	</book>
+<book>
+	<BookTitle>Art Of Fast Bowling</BookTitle>
+	<ISBN>100-100-1003</ISBN>
+	<price currency="12.99" />
+	<publishdate>2012-05-12</publishdate>
+	<totaltimeincirculation>P3Y5M02D</totaltimeincirculation>
+	<author>
+		<authorname>
+			<lastName>Lillee</lastName>
+			<middleInitial></middleInitial>
+			<firstName>Dennis</firstName>
+		</authorname>
+		<dateOfBirth>1960-10-12</dateOfBirth>
+		<highesteducation>BS</highesteducation>
+	</author>
+	<publisher>
+		<publishername>Madison</publishername>
+		<publisheraddress>
+			<streetaddress>812 W renner rd</streetaddress>
+			<suiteno>1145</suiteno>
+			<city>Dallas</city>
+			<zipcode>75080</zipcode>
+			<country>USA</country>
+		</publisheraddress>
+	</publisher>
+</book>
+<book>
+	<BookTitle>Jurassic Park</BookTitle>
+	<ISBN>100-100-1004</ISBN>
+	<price currency="11.99" />
+	<publishdate>2011-09-25</publishdate>
+	<totaltimeincirculation>P4Y1M11D</totaltimeincirculation>
+	<author>
+		<authorname>
+			<lastName>Crichton</lastName>
+			<middleInitial>J.</middleInitial>
+			<firstName>Michael</firstName>
+		</authorname>
+		<dateOfBirth>1940-05-20</dateOfBirth>
+		<highesteducation>PHD</highesteducation>
+	</author>
+	<publisher>
+		<publishername>Chronicle</publishername>
+		<publisheraddress>
+			<streetaddress>471 E Elm Street</streetaddress>
+			<suiteno>222</suiteno>
+			<city>New York</city>
+			<zipcode>21012</zipcode>
+			<country>USA</country>
+		</publisheraddress>
+	</publisher>
+	</book>
+</bookdetail>

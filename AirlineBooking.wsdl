@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<wsdl:definitions name="AirlineBooking"
+ 
+ 
+targetNamespace="http://example.com/airlinebooking.wsdl"
+          xmlns:tns="http://example.com/airlinebooking.wsdl"
+          xmlns:xsdfs="http://example.com/airlinebooking.xsd"
+          xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+          xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+ 
+ 
+    <wsdl:types>
+       <xs:schema targetNamespace="http://example.com/airlinebooking.xsd"
+              xmlns:xs="http://www.w3.org/2000/10/XMLSchema">
+           <xs:element name="AirlineBookingRequest">
+              <xs:complexType>
+                  <xs:all>
+					  <xs:element name="Flight_no" type="xs:integer"/>
+					  <xs:element name="Flight_date" type="xs:date"/>
+                      <xs:element name="Flight_time" type="xs:time"/>
+					  <xs:element name="Source_airport" type="xs:string"/>
+					  <xs:element name="Destination_airport" type="xs:string"/>
+                  </xs:all>
+              </xs:complexType>
+           </xs:element>
+           <xs:element name="AirlineBookingResponse">
+              <xs:complexType>
+                  <xs:all>
+                      <xs:element name="Flight_status" type="xs:string"/>
+					  <xs:element name="Booking_confirmation_no" type="xs:string"/>
+                  </xs:all>
+              </xs:complexType>
+           </xs:element>
+       </xs:schema>
+    </wsdl:types>
+ 
+ 
+    <wsdl:message name="AirlineBookingInput">
+        <wsdl:part name="body" element="xsdfs:AirlineBookingRequest"/>
+    </wsdl:message>
+ 
+    <wsdl:message name="AirlineBookingOutput">
+        <wsdl:part name="body" element="xsdfs:AirlineBookingResponse"/>
+    </wsdl:message>
+ 
+    <wsdl:portType name="AirlineBookingPortType">
+        <wsdl:operation name="BookFlight">
+           <wsdl:input message="tns:AirlineBookingInput"/>
+           <wsdl:output message="tns:AirlineBookingOutput"/>
+        </wsdl:operation>
+    </wsdl:portType>
+ 
+ 
+    <wsdl:binding name="AirlineBookingSoapBinding" type="tns:AirlineBookingPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="BookFlight">
+           <soap:operation soapAction="http://example.com/BookFlight"/>
+           <wsdl:input>
+               <soap:body use="literal"/>
+           </wsdl:input>
+           <wsdl:output>
+               <soap:body use="literal"/>
+           </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+	
+    <wsdl:service name="AirlineBookingService">
+        <wsdl:documentation>Airline Booking Service</wsdl:documentation>
+        <wsdl:port name="AirlineBookingPort" binding="tns:AirlineBookingBinding">
+           <soap:address location="http://example.com/bookflight"/>
+        </wsdl:port>
+    </wsdl:service>
+ 
+</wsdl:definitions>

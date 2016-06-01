@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<wsdl:definitions name="AirlineSearch"
+ 
+ 
+targetNamespace="http://example.com/airlinesearch.wsdl"
+          xmlns:tns="http://example.com/airlinesearch.wsdl"
+          xmlns:xsdfs="http://example.com/airlinesearch.xsd"
+          xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+          xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+ 
+ 
+    <wsdl:types>
+       <xs:schema targetNamespace="http://example.com/airlinesearch.xsd"
+              xmlns:xs="http://www.w3.org/2000/10/XMLSchema">
+           <xs:element name="AirlineSearchRequest">
+              <xs:complexType>
+                  <xs:all>
+                      <xs:element name="Flight_date" type="xs:date"/>
+					  <xs:element name="Source_airport" type="xs:string"/>
+					  <xs:element name="Destination_airport" type="xs:string"/>
+                  </xs:all>
+              </xs:complexType>
+           </xs:element>
+           <xs:element name="AirlineSearchResponse" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                  <xs:all>
+                      <xs:element name="Flight_no" type="xs:integer"/>
+					  <xs:element name="Flight_date" type="xs:date"/>
+					  <xs:element name="Flight_time" type="xs:time"/>
+					  <xs:element name="Price" type="xs:float"/>
+                  </xs:all>
+              </xs:complexType>
+           </xs:element>
+       </xs:schema>
+    </wsdl:types>
+ 
+    <wsdl:message name="InputFlightSearch">
+        <wsdl:part name="body" element="xsdfs:AirlineSearchRequest"/>
+    </wsdl:message>
+ 
+    <wsdl:message name="OutputFlightDetails">
+        <wsdl:part name="body" element="xsdfs:AirlineSearchResponse"/>
+    </wsdl:message>
+ 
+    <wsdl:portType name="AirlineSearchPortType">
+        <wsdl:operation name="GetFlightDetails">
+           <wsdl:input message="tns:InputFlightSearch"/>
+           <wsdl:output message="tns:OutputFlightDetails"/>
+        </wsdl:operation>
+    </wsdl:portType>
+ 
+    <wsdl:binding name="AirlineSearchSoapBinding" type="tns:AirlineSearchPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetFlightDetails">
+           <soap:operation soapAction="http://example.com/GetFlightDetails"/>
+           <wsdl:input>
+               <soap:body use="literal"/>
+           </wsdl:input>
+           <wsdl:output>
+               <soap:body use="literal"/>
+           </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="AirlineSearchService">
+        <wsdl:documentation>Flight Details Search Service</wsdl:documentation>
+        <wsdl:port name="AirlineSearchPort" binding="tns:AirlineSearchBinding">
+           <soap:address location="http://example.com/airlinesearch"/>
+        </wsdl:port>
+    </wsdl:service>
+ 
+</wsdl:definitions>

@@ -1,0 +1,53 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: red;
+    text-align : center;
+}
+
+h2 {
+    color: brown;
+    
+}
+
+#fun_facts {
+    
+    color: blue;
+}
+
+#birthdays {
+    
+    color: black;
+    text-align : center;
+}
+
+
+.required {
+    
+    color: brown;
+}
+
+#geolocation {
+    
+    color: orange;
+    text-align : center;
+}
+
+
+#top_story{
+    
+    color: black;
+    text-align : left;
+}
+
+
+.title {
+    font-size: large;
+}
+
+
+
+
+

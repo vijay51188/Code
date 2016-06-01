@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel="stylesheet" type="text/css" href="firststyle.css">
+    <meta name="keywords" content="web,design,html,css,html5"/>
+    <meta name="author"   content="Vijay Ramanathan"/>
+    <meta name="description"   content="Initial Homepage"/> 
+    
+    <style>
+      #div1 {width:55px;height:55px;padding:10px;border:1px solid #aaaaaa;}
+    </style>
+
+   <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </script>
+
+    <script>
+      function clickCounter() {
+        if(typeof(Storage) !== "undefined") {
+          if (localStorage.clickcount) {
+              localStorage.clickcount = Number(localStorage.clickcount)+1;
+          } else {
+              localStorage.clickcount = 1;
+          }
+          document.getElementById("result").innerHTML = "You have clicked me " + localStorage.clickcount + " time(s).";
+      } else {
+          document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+      }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+        $("#hide").click(function(){
+        $("#geolocation").hide();
+        });
+        $("#show").click(function(){
+        $("#geolocation").show();
+        });
+        $("#toggle").click(function(){
+        $("#geolocation").toggle();
+        });
+     });
+    </script>
+
+    <script>
+       $(document).ready(function(){
+       $("#fadeout").dblclick(function(){
+       $("#other_stories").fadeOut("slow");
+        
+       });
+       $("#fadein").dblclick(function(){
+       $("#other_stories").fadeIn();
+        
+       });
+       $("#fadetgl").dblclick(function(){
+       $("#other_stories").fadeToggle();
+        
+       });
+       $("#fadeto").dblclick(function(){
+       $("#other_stories").fadeTo("slow", 0.7);
+        
+       });
+     });
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+     $(document).ready(function(){
+       $(".title").mouseenter(function(){
+        $(".title").css("background-color", "yellow");
+       });
+       $(".title").mouseleave(function(){
+        $(".title").css("background-color", "lightgray");
+       });
+       $(".title").mouseenter(function(){
+        $(".title").animate({letterSpacing: "+=10px"});
+       });
+	$(".title").on('mouseleave',function(){
+        $(".title").animate({letterSpacing: "-=10px"});
+    });});
+     $(document).keypress(function(e) {
+        if (e.keyCode == 65) {
+        
+		$("article").fadeOut("fast",function(){
+		$("aside").fadeOut("fast",function(){
+		$("h1").fadeOut();});});
+
+	}
+     });
+     $(document).keydown(function(e) {
+        if (e.keyCode == 90) {
+        
+		$("h2").animate({wordSpacing: "+=15px"}).animate({letterSpacing: "+=10px"},"fast","swing").animate({fontSize: "3em"});
+
+	}
+    });
+    $(document).keyup(function(e){
+	if (e.keyCode == 90) {
+           $("h2").animate({wordSpacing: "-=15px"}).animate({letterSpacing: "-=10px"},"fast","swing").animate({fontSize: "2em"});
+           $("article").fadeIn("fast",function(){
+	   $("aside").fadeIn("fast",function(){
+	   $("h1").fadeIn();});});
+	}
+       });
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>   
+       $(document).ready(function(){
+       $("input[name='name']").blur(function(){
+				alert("text:"+$(this).val() +"---HTML:"+$(this).html("input[name='name']")+"---  attribute:"+$(this).attr("name"));
+			});
+	$("input[name='email']").change(function(){
+        			alert("field value:"+$(this).val() +"---  attribute:"+$(this).attr("name"));
+			    });
+
+              });
+
+           
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>   
+       $(document).ready(function(){
+         $("textarea").focus(function(){
+           $(".focus").css("display", "inline").fadeOut(2000);
+           $("#message").val(function(i, origText){
+            return "Old text: " + origText + " New text: Hello world! (index: " + i + ")"; });
+
+           $("#message").html(function(i, origText){
+            return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")"; }); 
+         });
+       });  
+   </script>   
+      
+  </head>
+
+  <body>
+
+    <header>
+      <h1 class="title">Today's Digest</h1> 
+
+      <div>Catch up on all the latest news stories.</div>
+    </header>
+    <section id="top_story">
+      
+      <article>
+        <h1>United Nations Meeting</h1>
+        <p>World leaders will gather for their annual meeting at the United Nations starting Friday as
+           Europe faces a flood of asylum seekers,many fleeing Syria's civil war in the
+           worst humanitarian crisis since the world body was created 70 years ago.</p>
+
+        <p>On the agenda of the meeting is dealing with the Islamic State. President Barack Obama of the 
+           United States will head a meeting on counterterrorism to address the dilemma regarding foreign 
+           terrorist fighters and life-threatening extremism.</p>
+
+        <p>Before the three-day General Assembly starts, Pope Francis will conduct a talk on Friday which
+           would open the meeting between over 150 world leaders that will officially decide on on a
+           worldwide sustainable development agenda that will be utilized for the next 15 years.</p>
+
+        <aside>
+        <p>Will you be there ? If yes, you can send us your snapshots </p>
+        </aside>
+       </article> 
+
+    </section>
+
+    <section id="other_stories">
+      <h2>Other Stories</h2>
+      <ul>
+        <li><a href="#">Sport</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Politics</a></li>
+        <li><p> World weather map. Please click on the regions to know more about them <p> <br>
+            <img src="worldmap.jpg" alt="worldweather" usemap="#worldMap" />
+            <map name="worldMap">
+            <area alt="northamerica"  href="https://en.wikipedia.org/wiki/North_America" shape="rect" coords="31,67,173,136" />
+            <area alt="southamerica"  href="https://en.wikipedia.org/wiki/South_America" shape="rect" coords="147,156,182,236" />
+            <area alt="europe"  href="https://en.wikipedia.org/wiki/Europe" shape="rect" coords="253,82,328,90" />
+            <area alt="africa"  href="https://en.wikipedia.org/wiki/Africa" shape="rect" coords="248,115,316,199" />
+            <area alt="asia"  href="https://en.wikipedia.org/wiki/Asia" shape="rect" coords="327,76,445,122" /> 
+            <area alt="australia"  href="https://en.wikipedia.org/wiki/Australia_(continent)" shape="rect" coords="429,190,513,222" /> 
+            </map></li>
+
+
+      </ul>
+    </section>
+
+    <div id="fade">
+      <button id="fadeout">FadeOut</button>
+      <button id="fadein">FadeIn</button>
+      <button id="fadetgl">Fade Toggle</button>
+      <button id="fadeto">FadeTo</button>
+    </div>  
+
+    <section id="fun_facts">
+      <h2>Fun Facts</h2>
+      <ol>
+        <li>Banging your head against a wall burns 150 calories an hour.</li>
+        <li>Human saliva has a boiling point three times that of regular water.</li>
+        <li>The person who invented the Frisbee was cremated and made into frisbees after he died!</li>
+      </ol>
+      <aside>
+        <p>Want more ? Return here everyday. </p>
+       </aside>
+
+    </section>
+
+    <section id="birthdays">
+      <h2>Birthdays this month</h2>
+      <dl>
+        <dt><strong>Charlie Sheen</strong></dt>
+        <dd>Actor/Director - Sept 3</dd>
+        <dt><strong>Beyonce Knowles</strong></dt>
+        <dd>Singer/Actress - Sept 4</dd>
+      </dl>
+      
+    </section>    
+
+    <section id="gk">
+      <h2>General Knowledge</h2>
+      <p> Top 3 trading currencies of the world </p>
+      <table style="width:100%">
+  	<tr>
+    	  <th>Rank</th>
+    	  <th>Currency</th>		
+    	  <th>Region</th>
+  	</tr>
+  	<tr>
+    	  <td >1</td>
+    	  <td >US Dollar</td>		
+    	  <td >USA</td>
+   	  </tr> 
+  	<tr>
+    	  <td>2</td>
+    	  <td>Euro</td>		
+    	  <td>European Union</td>
+  	</tr>
+  	<tr>
+    	  <td>3</td>
+    	  <td>Yen</td>		
+    	  <td>Japan</td>
+  	</tr>
+      </table>
+      
+    </section>    
+
+    <section id="geolocation">
+      <h2>Wanna Know your coordinates ? </h2>
+      <p>Click the button to get your coordinates.</p>
+
+      <button onclick="getLocation()">Try It</button>
+
+      <p id="demo"></p>
+
+      <script>
+         var x = document.getElementById("demo");
+
+         function getLocation() {
+         if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+           x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+         }
+
+       function showPosition(position) {
+       x.innerHTML = "Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude;	
+      }
+      </script>
+      
+    </section>    
+
+    <div id="hideshow"; text-align:center">
+      <button id="hide">Hide</button>
+      <button id="show">Show</button>
+      <button id="toggle">Toggle</button>
+    </div> 
+
+    <section id="shopping_cart">
+       <h2>Shopping Cart</h2>
+       <ul>
+       <li><a href="shopping.html">Shopping Cart</a>
+       </li>
+       </br>
+       </ul>
+    </section>
+
+    <section id="contact_form">
+
+             <h1>Get In Touch!</h1>
+       <h2>Fill out our  contact form below to get in touch with us! 
+           Please provide as much information as possible for us to help you with your enquiry :)</h2>
+    
+       <form >
+         <label id="lblname" for="name">Name: <span class="required">*</span></label>
+         <input type="text" id="name" name="name" value="" placeholder="John Doe" required="required" />
+         
+         <label for="email">Email Address: <span class="required">*</span></label>
+         <input type="email" id="email" name="email" value=""  placeholder="johndoe@example.com" required="required" />
+         
+         <label for="telephone">Telephone: </label>
+         <input type="tel" id="telephone" name="telephone" value="" />
+
+         <label for="Gender">Gender: </label> 
+         <input type="radio" name="sex" value="male" checked>Male
+         
+         <input type="radio" name="sex" value="female">Female
+
+         <br/>
+         <label for="Applicable">Check all applicable: </label>
+         <input type="checkbox" name="Age>18" value="Age>18" />Age>18
+         <input type="checkbox" name="US Citizen" value="US Citizen" />
+           US Citizen <br/>
+        
+ 
+         <label for="message">Message: </label>
+         <textarea id="message" name="message" required="required" data-minlength="20">Type your message</textarea>
+         <span class="focus">your message must be atleast 20 characters!</span><br/>
+         <p>Drag the image into the square:</p>
+
+         <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+         <br>
+         <img id="drag1" src="dog.jpg" draggable="true" ondragstart="drag(event)" width="55" height="55">
+
+         <input type="reset" value="Reset" id ="reset-button">
+         <input type="submit" value="Submit" id="submit-button" />
+         <p id="req-field-desc"><span class="required">*</span> indicates a required field</p>
+       </form>
+       
+    </section>
+
+    
+    <footer>
+        <p><button onclick="clickCounter()" type="button">Click Counter</button></p>
+        <div id="result"></div>
+        <p>Click the button to start the counter.</p>
+        <p>This site is maintained by <a href="http://cs.utdallas.edu/">UT Dallas Computer Science Dept.</a> </p>
+    </footer>
+
+    
+  </body>
+</html>
